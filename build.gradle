@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "6.1.0"
+}
+
+group 'org.sus'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven {
+        name 'duncte123-jfrog'
+        url 'https://duncte123.jfrog.io/artifactory/maven'
+    }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+    compile group: 'com.zaxxer', name: 'HikariCP', version: '4.0.1'
+    compile 'net.dv8tion:JDA:4.2.0_228'
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.29'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.3.0-alpha5'
+    implementation group: 'me.duncte123', name: 'botCommons', version: '2.1.1'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
+    compile group: 'org.json', name: 'json', version: '20201115'
+
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.16'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
+    compile 'io.github.cdimascio:dotenv-java:2.2.0'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'org.sus.Main'
+        )
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

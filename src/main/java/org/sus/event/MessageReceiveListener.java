@@ -19,7 +19,7 @@ public class MessageReceiveListener extends ListenerAdapter {
         if(dao.exists(e.getGuild().getId())) {
             if(e.getMessage().getEmbeds().size() == 0)  {
                 CachedMessageDAO cacheDao = Main.getCachedMessageDAO();
-                cacheDao.save(new CachedMessage(e.getMessageId(), content, e.getAuthor().getAsTag()));
+                cacheDao.save(new CachedMessage(e.getMessageId(), content.trim(), e.getAuthor().getAsTag()));
             }
         }
     }

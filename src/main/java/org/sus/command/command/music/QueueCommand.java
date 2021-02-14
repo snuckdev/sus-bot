@@ -29,7 +29,7 @@ public class QueueCommand implements ICommand {
         }
 
 
-        int trackCount = Math.min(queue.size(), 20);
+        int trackCount = Math.min(queue.size(), 15);
         List<AudioTrack> trackList = new ArrayList<>(queue);
         MessageAction messageAction = channel.sendMessage("**Fila atual:**\n");
 

@@ -32,6 +32,11 @@ public class ClearFortniteCommand implements ICommand {
     }
 
     @Override
+    public String getHelp() {
+        return "limpa seu perfil do Fortnite, se você tem um";
+    }
+
+    @Override
     public List<String> getAliases() {
         return Collections.singletonList("limparfortnite");
     }

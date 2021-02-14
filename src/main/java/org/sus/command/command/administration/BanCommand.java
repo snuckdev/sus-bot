@@ -48,6 +48,11 @@ public class BanCommand implements ICommand {
     }
 
     @Override
+    public String getHelp() {
+        return "bane algum usuário específico";
+    }
+
+    @Override
     public List<String> getAliases() {
         return Collections.singletonList("banir");
     }

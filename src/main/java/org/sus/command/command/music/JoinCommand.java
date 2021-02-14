@@ -40,4 +40,9 @@ public class JoinCommand implements ICommand {
     public String getName() {
         return "join";
     }
+
+    @Override
+    public String getHelp() {
+        return "faz eu entrar em um canal de voz";
+    }
 }

@@ -52,6 +52,11 @@ public class SetLogChannelCommand implements ICommand {
     }
 
     @Override
+    public String getHelp() {
+        return "seta o canal de logs do servidor";
+    }
+
+    @Override
     public List<String> getAliases() {
         return Collections.singletonList("setlogs");
     }

@@ -27,6 +27,11 @@ public class ShutdownCommand implements ICommand {
     }
 
     @Override
+    public String getHelp() {
+        return "desliga o bot";
+    }
+
+    @Override
     public List<String> getAliases() {
         return Collections.singletonList("desligar");
     }

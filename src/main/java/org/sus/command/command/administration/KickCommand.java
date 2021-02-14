@@ -76,6 +76,11 @@ public class KickCommand implements ICommand {
     }
 
     @Override
+    public String getHelp() {
+        return "expulsa um usuário do servidor";
+    }
+
+    @Override
     public List<String> getAliases() {
         return Collections.singletonList("kickar");
     }

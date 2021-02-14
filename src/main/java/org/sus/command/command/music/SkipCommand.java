@@ -9,6 +9,9 @@ import org.sus.command.ICommand;
 import org.sus.lavaplayer.GuildMusicManager;
 import org.sus.lavaplayer.PlayerManager;
 
+import java.util.Collections;
+import java.util.List;
+
 public class SkipCommand implements ICommand {
 
     @SuppressWarnings("ConstantConditions")
@@ -53,5 +56,15 @@ public class SkipCommand implements ICommand {
     @Override
     public String getName() {
         return "skip";
+    }
+
+    @Override
+    public String getHelp() {
+        return "pula a música atual";
+    }
+
+    @Override
+    public List<String> getAliases() {
+        return Collections.singletonList("pular");
     }
 }

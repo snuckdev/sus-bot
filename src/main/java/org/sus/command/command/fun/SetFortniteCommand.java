@@ -69,6 +69,11 @@ public class SetFortniteCommand implements ICommand {
     }
 
     @Override
+    public String getHelp() {
+        return "seta seu perfil do Fortnite";
+    }
+
+    @Override
     public List<String> getAliases() {
         return Collections.singletonList("setfortniteplayer");
     }

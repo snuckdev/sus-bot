@@ -53,6 +53,11 @@ public class RepeatCommand implements ICommand {
     }
 
     @Override
+    public String getHelp() {
+        return "faz a música atual ficar em loop";
+    }
+
+    @Override
     public List<String> getAliases() {
         return Collections.singletonList("repetir");
     }

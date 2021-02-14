@@ -171,4 +171,9 @@ public class FortniteCommand implements ICommand {
     public String getName() {
         return "fortnite";
     }
+
+    @Override
+    public String getHelp() {
+        return "consulta um usuário do Fortnite";
+    }
 }

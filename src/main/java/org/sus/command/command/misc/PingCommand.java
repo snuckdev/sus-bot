@@ -32,4 +32,9 @@ public class PingCommand implements ICommand {
     public String getName() {
         return "ping";
     }
+
+    @Override
+    public String getHelp() {
+        return "mostra o ping do bot";
+    }
 }

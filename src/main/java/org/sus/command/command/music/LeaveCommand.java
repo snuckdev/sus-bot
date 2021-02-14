@@ -51,6 +51,11 @@ public class LeaveCommand implements ICommand {
     }
 
     @Override
+    public String getHelp() {
+        return "faz eu sair de um canal de voz";
+    }
+
+    @Override
     public List<String> getAliases() {
         return Collections.singletonList("sair");
     }

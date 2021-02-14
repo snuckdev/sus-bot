@@ -9,6 +9,7 @@ import org.sus.command.command.administration.*;
 import org.sus.command.command.fun.ClearFortniteCommand;
 import org.sus.command.command.fun.FortniteCommand;
 import org.sus.command.command.fun.SetFortniteCommand;
+import org.sus.command.command.help.HelpCommand;
 import org.sus.command.command.misc.AvatarCommand;
 import org.sus.command.command.misc.PingCommand;
 import org.sus.command.command.misc.UserInfoCommand;
@@ -46,6 +47,7 @@ public class CommandManager {
         add(new NowPlayingCommand());
         add(new LeaveCommand());
         add(new RepeatCommand());
+        add(new HelpCommand(this));
     }
 
     private void add(ICommand command) {
@@ -60,8 +62,12 @@ public class CommandManager {
         commands.add(command);
     }
 
+    public List<ICommand> getCommands() {
+        return commands;
+    }
+
     @Nullable
-    private ICommand get(String search) {
+    public ICommand get(String search) {
         String lower = search.toLowerCase();
 
         for(ICommand cmd : commands) {

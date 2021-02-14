@@ -101,4 +101,9 @@ public class UserInfoCommand implements ICommand {
     public String getName() {
         return "userinfo";
     }
+
+    @Override
+    public String getHelp() {
+        return "mostra as informações de um usuário";
+    }
 }

@@ -54,6 +54,11 @@ public class NowPlayingCommand implements ICommand {
     }
 
     @Override
+    public String getHelp() {
+        return "mostra a música que está tocando agora";
+    }
+
+    @Override
     public List<String> getAliases() {
         return Arrays.asList("tocando", "np", "tocandoagora");
     }

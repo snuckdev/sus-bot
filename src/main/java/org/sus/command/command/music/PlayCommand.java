@@ -64,4 +64,9 @@ public class PlayCommand implements ICommand {
     public String getName() {
         return "play";
     }
+
+    @Override
+    public String getHelp() {
+        return "toca uma música do YouTube";
+    }
 }

@@ -59,6 +59,11 @@ public class AvatarCommand implements ICommand {
     }
 
     @Override
+    public String getHelp() {
+        return "mostra o seu avatar ou de algum usuário";
+    }
+
+    @Override
     public List<String> getAliases() {
         return Collections.singletonList("av");
     }

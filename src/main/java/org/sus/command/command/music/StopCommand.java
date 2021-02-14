@@ -45,4 +45,9 @@ public class StopCommand implements ICommand {
     public String getName() {
         return "stop";
     }
+
+    @Override
+    public String getHelp() {
+        return "para a música e limpa a fila de músicas";
+    }
 }

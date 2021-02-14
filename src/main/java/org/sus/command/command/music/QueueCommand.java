@@ -41,7 +41,7 @@ public class QueueCommand implements ICommand {
                     .append(String.valueOf(i + 1))
                     .append(" `")
                     .append(info.title)
-                    .append("` by `")
+                    .append("` por `")
                     .append(info.author)
                     .append("` [`")
                     .append(formatTime(track.getDuration()))
@@ -68,6 +68,11 @@ public class QueueCommand implements ICommand {
     @Override
     public String getName() {
         return "queue";
+    }
+
+    @Override
+    public String getHelp() {
+        return "mostra a fila atual de músicas";
     }
 
     @Override

@@ -72,6 +72,11 @@ public class ClearCommand implements ICommand {
     }
 
     @Override
+    public String getHelp() {
+        return "limpa o chat atual";
+    }
+
+    @Override
     public List<String> getAliases() {
         return Collections.singletonList("limpar");
     }

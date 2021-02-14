@@ -29,7 +29,7 @@ public class HelpCommand implements ICommand {
             manager.getCommands().stream().map(ICommand::getName).forEach((it) -> {
                 builder.append("`!")
                         .append(it)
-                        .append("\n");
+                        .append("`\n");
             });
 
             channel.sendMessage(builder.toString()).queue();

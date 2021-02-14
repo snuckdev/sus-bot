@@ -1,5 +1,6 @@
 package org.sus.command.command.administration;
 
+import me.duncte123.botcommons.BotCommons;
 import org.sus.command.CommandContext;
 import org.sus.command.ICommand;
 import org.sus.util.Constants;
@@ -16,6 +17,7 @@ public class ShutdownCommand implements ICommand {
             return;
         }
         ctx.getChannel().sendMessage("**Desligando...**").queue();
+        BotCommons.shutdown(ctx.getJDA());
         ctx.getJDA().shutdown();
     }
 

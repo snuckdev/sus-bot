@@ -12,6 +12,7 @@ import org.sus.command.command.fun.SetFortniteCommand;
 import org.sus.command.command.misc.AvatarCommand;
 import org.sus.command.command.misc.PingCommand;
 import org.sus.command.command.misc.UserInfoCommand;
+import org.sus.command.command.music.*;
 import org.sus.util.Constants;
 
 import javax.annotation.Nullable;
@@ -37,6 +38,13 @@ public class CommandManager {
         add(new ClearFortniteCommand());
         add(new KickCommand());
         add(new SetLogChannelCommand());
+        add(new PlayCommand());
+        add(new JoinCommand());
+        add(new StopCommand());
+        add(new SkipCommand());
+        add(new QueueCommand());
+        add(new NowPlayingCommand());
+        add(new LeaveCommand());
     }
 
     private void add(ICommand command) {

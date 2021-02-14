@@ -43,9 +43,12 @@ public class Main {
 
         setupDatabase();
 
-        JDABuilder builder = JDABuilder.createDefault(Constants.TOKEN);
+        JDABuilder builder = JDABuilder.createDefault(Constants.TOKEN, GatewayIntent.GUILD_MESSAGES,  GatewayIntent.GUILD_EMOJIS, GatewayIntent.GUILD_VOICE_STATES);
 
-        builder.disableCache(CacheFlag.MEMBER_OVERRIDES, CacheFlag.VOICE_STATE);
+        builder.disableCache(CacheFlag.MEMBER_OVERRIDES);
+
+        builder.enableCache(CacheFlag.VOICE_STATE);
+
         builder.disableCache(CacheFlag.ACTIVITY);
         builder.disableIntents(GatewayIntent.GUILD_MESSAGE_TYPING);
         builder.setBulkDeleteSplittingEnabled(false);

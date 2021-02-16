@@ -39,7 +39,7 @@ public class BanCommand implements ICommand {
         String reason = String.join(" ", ctx.getArgs().subList(1, ctx.getArgs().size()));
 
         target.ban(0, reason).queue();
-        ctx.getChannel().sendMessage(realTarget + " **foi banido! Motivo:** " + reason).queue();
+        ctx.getChannel().sendMessage("❌ `" + realTarget + "` **foi banido! Motivo:** `" + reason + "`").queue();
     }
 
     @Override

@@ -45,7 +45,7 @@ public class PlayerManager {
             public void trackLoaded(AudioTrack track) {
                 musicManager.scheduler.queue(track);
 
-                channel.sendMessage("**Adicionando à fila:** `")
+                channel.sendMessage("\uD83D\uDD0E **Adicionando à fila:** `")
                         .append(track.getInfo().title)
                         .append("` **por** `")
                         .append(track.getInfo().author)
@@ -57,15 +57,26 @@ public class PlayerManager {
             public void playlistLoaded(AudioPlaylist playlist) {
                 List<AudioTrack> tracks = playlist.getTracks();
 
-                channel.sendMessage("**Adicionando à fila:** `")
-                        .append(String.valueOf(tracks.size()))
-                        .append("` **tracks da playlist** `")
-                        .append(playlist.getName())
-                        .append("`")
-                        .queue();
+                if(playlist.isSearchResult()) {
+                    channel.sendMessage("\uD83D\uDD0E **Adicionando à fila:** `")
+                            .append(tracks.get(0).getInfo().title)
+                            .append("` **de** `")
+                            .append(tracks.get(0).getInfo().author)
+                            .append("`")
+                            .queue();
 
-                for(AudioTrack track : tracks) {
-                    musicManager.scheduler.queue(track);
+                    musicManager.scheduler.queue(tracks.get(0));
+                } else {
+                    channel.sendMessage("\uD83D\uDD0E **Adicionando à fila:** `")
+                            .append(String.valueOf(tracks.size()))
+                            .append("` **tracks da playlist** `")
+                            .append(playlist.getName())
+                            .append("`")
+                            .queue();
+
+                    for(AudioTrack track : tracks) {
+                        musicManager.scheduler.queue(track);
+                    }
                 }
 
             }

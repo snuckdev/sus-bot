@@ -44,7 +44,7 @@ public class KickCommand implements ICommand {
             }
 
             memberToBan.kick().queue();
-            ctx.getChannel().sendMessageFormat("`%s` **foi expulso por** `%s`", memberToBan.getUser().getAsTag(), author.getAsTag()).queue();
+            ctx.getChannel().sendMessageFormat("❌ `%s` **foi expulso por** `%s`", memberToBan.getUser().getAsTag(), author.getAsTag()).queue();
 
         } else if(ctx.getArgs().size() >= 2) {
 
@@ -65,7 +65,7 @@ public class KickCommand implements ICommand {
 
             memberToBan.kick(reason).queue();
 
-            ctx.getChannel().sendMessageFormat("`%s` **foi expulso por** `%s` **- motivo:** `%s`", memberToBan.getUser().getAsTag(), author.getAsTag(), reason).queue();
+            ctx.getChannel().sendMessageFormat("❌ `%s` **foi expulso por** `%s` **- motivo:** `%s`", memberToBan.getUser().getAsTag(), author.getAsTag(), reason).queue();
         }
 
     }

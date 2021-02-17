@@ -45,7 +45,7 @@ public class NowPlayingCommand implements ICommand {
         }
 
         AudioTrackInfo info = playingTrack.getInfo();
-        channel.sendMessageFormat("**Tocando agora:** `%s` **por** `%s` - (<%s>)", info.title, info.author, info.uri).queue();
+        channel.sendMessageFormat("\uD83C\uDFB5 **Tocando agora:** `%s` **por** `%s` - (<%s>)", info.title, info.author, info.uri).queue();
     }
 
     @Override

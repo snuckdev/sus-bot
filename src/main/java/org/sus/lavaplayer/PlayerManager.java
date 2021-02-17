@@ -58,6 +58,7 @@ public class PlayerManager {
                 List<AudioTrack> tracks = playlist.getTracks();
 
                 if(playlist.isSearchResult()) {
+
                     channel.sendMessage("\uD83D\uDD0E **Adicionando à fila:** `")
                             .append(tracks.get(0).getInfo().title)
                             .append("` **de** `")
@@ -67,6 +68,7 @@ public class PlayerManager {
 
                     musicManager.scheduler.queue(tracks.get(0));
                 } else {
+
                     channel.sendMessage("\uD83D\uDD0E **Adicionando à fila:** `")
                             .append(String.valueOf(tracks.size()))
                             .append("` **tracks da playlist** `")
